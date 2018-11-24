@@ -390,7 +390,7 @@ html body {
 
 .masthead {
   display: flex;
-  background-image: url(../../img/header.png);
+  background-image: url(../../img/header-01.png);
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -421,7 +421,8 @@ html body {
       color: rgba(0, 0, 0, 0.89);
       text-decoration: none; }
       .masthead .nav a.menu-item.active {
-        text-decoration: underline; }
+        text-decoration: underline;
+        text-decoration-color: #9c1c1f; }
   .masthead .logo {
     display: flex;
     flex-grow: 1;
@@ -517,15 +518,18 @@ footer {
       .container .aboutImg {
         display: none; } }
 
+.content {
+  display: flex;
+  flex-direction: column; }
+
 .contact {
-  display: block;
+  display: flex;
   max-width: 700px;
   margin: 30px; }
   .contact div {
     display: flex; }
 
 .contactImage {
-  float: left;
   margin-right: 20px; }
   @media screen and (max-width: 600px) {
     .contactImage {

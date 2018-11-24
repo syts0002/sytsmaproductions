@@ -30,7 +30,7 @@ html body {
 
 .masthead {
   display: flex;
-  background-image: url(../../img/header.png);
+  background-image: url(../../img/header-01.png);
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,6 +69,7 @@ html body {
 
       &.active {
         text-decoration: underline;
+        text-decoration-color: #9c1c1f;
       }
     }
   }
@@ -200,8 +201,13 @@ footer {
 }
 
 // contact.html
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact {
-  display: block;
+  display: flex;
   max-width: 700px;
   margin: 30px;
 
@@ -211,8 +217,8 @@ footer {
 }
 
 .contactImage {
-  float: left;
   margin-right: 20px;
+
   @media screen and (max-width: 600px) {
     display: none;
   }
