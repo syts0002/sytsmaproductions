@@ -5,361 +5,471 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/min/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Sean Sytsma Productions</title>
   </head>
 
   <body>
     <header>
       <div class="masthead">
-        <a class="logo" href="index.html">
-          <img src="img/logo.png" alt="branding" />
-        </a>
-        <nav class="nav">
-          <a href="index.html" class="menu-item">home</a>
-          <a href="photoport.html" class="menu-item active">portfolio</a>
-          <a href="about.html" class="menu-item">about</a>
-          <a href="contact.html" class="menu-item">contact</a>
-        </nav>
-        <div class="social">
-          <a
-            href="https://www.instagram.com/sytsma_productions/"
-            target="_blank"
-          >
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a class="navbar-brand logo" href="index.html">
             <img
-              class="socialIcon"
-              src="./assets/instagram.png"
-              alt="instagram"
+              src="img/logo.png"
+              width="auto"
+              height="180px"
+              class="d-inline-block align-top"
+              alt=""
             />
           </a>
-          <a
-            href="https://www.youtube.com/channel/UCD8keeUTNHg2r0LmRVpAZ-g?view_as=subscriber"
-            target="_blank"
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <img class="socialIcon" src="./assets/youtube.png" alt="youtube" />
-          </a>
-        </div>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown active">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  PORTFOLIO
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="photoport.html">PHOTO</a>
+                  <a class="dropdown-item" href="video.html">VIDEO</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+            <div class="social">
+              <a
+                href="https://www.instagram.com/sytsma_productions/"
+                class="fa fa-instagram"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.youtube.com/channel/UCD8keeUTNHg2r0LmRVpAZ-g?view_as=subscriber"
+                class="fa fa-youtube-play"
+                target="_blank"
+              ></a>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
-
     <!-- main page content -->
-    <div class="content">
+    <div class="photoContainer">
+      <h1 class="heading">PHOTO WORK</h1>
 
+      <div class="content">
         <style>
-            body {
-              font-family: Verdana, sans-serif;
-              margin: 0;
-            }
-            
-            * {
-              box-sizing: border-box;
-            }
-            
-            .row > .column {
-              padding: 0 8px;
-            }
-            
-            .row:after {
-              content: "";
-              display: table;
-              clear: both;
-            }
-            
-            .column {
-              float: left;
-              width: 25%;
-            }
-            
-            /* The Modal (background) */
-            .modal {
-              display: none;
-              position: fixed;
-              z-index: 1;
-              padding-top: 100px;
-              left: 0;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              overflow: auto;
-              background-color: black;
-            }
-            
-            /* Modal Content */
-            .modal-content {
-              position: relative;
-              background-color: #fefefe;
-              margin: auto;
-              padding: 0;
-              width: 90%;
-              max-width: 800px;
-              max-height: 600px;
-            }
-            
-            /* The Close Button */
-            .close {
-              color: white;
-              position: absolute;
-              top: 10px;
-              right: 25px;
-              font-size: 35px;
-              font-weight: bold;
-            }
-            
-            .close:hover,
-            .close:focus {
-              color: #999;
-              text-decoration: none;
-              cursor: pointer;
-            }
-            
-            .mySlides {
-              display: none;
-            }
-            
-            .cursor {
-              cursor: pointer;
-            }
-            
-            /* Next & previous buttons */
-            .prev,
-            .next {
-              cursor: pointer;
-              position: absolute;
-              top: 50%;
-              width: auto;
-              padding: 16px;
-              margin-top: -50px;
-              color: white;
-              font-weight: bold;
-              font-size: 20px;
-              transition: 0.6s ease;
-              border-radius: 0 3px 3px 0;
-              user-select: none;
-              -webkit-user-select: none;
-            }
-            
-            /* Position the "next button" to the right */
-            .next {
-              right: 0;
-              border-radius: 3px 0 0 3px;
-            }
-            
-            /* On hover, add a black background color with a little bit see-through */
-            .prev:hover,
-            .next:hover {
-              background-color: rgba(0, 0, 0, 0.8);
-            }
-            
-            /* Number text (1/3 etc) */
-            .numbertext {
-              color: #f2f2f2;
-              font-size: 12px;
-              padding: 8px 12px;
-              position: absolute;
-              top: 0;
-            }
-            
-            img {
-              margin-bottom: -4px;
-            }
-            
-            .caption-container {
-              text-align: center;
-              background-color: black;
-              padding: 2px 16px;
-              color: white;
-            }
-            
-            .demo {
-              opacity: 0.6;
-            }
-            
-            .active,
-            .demo:hover {
-              opacity: 1;
-            }
-            
-            img.hover-shadow {
-              transition: 0.3s;
-            }
-            
-            .hover-shadow:hover {
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-            </style>
-            <body>
-            
-              <div class="imageGrid">
-                <div>
-                  <img src="img/4.jpg" alt="" onclick="openModal();currentSlide(1)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/6.jpg" alt="" onclick="openModal();currentSlide(2)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/8.jpg" alt="" onclick="openModal();currentSlide(3)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/9.jpg" alt="" onclick="openModal();currentSlide(4)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/13.jpg" alt="" onclick="openModal();currentSlide(5)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/15.jpg" alt="" onclick="openModal();currentSlide(6)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/16.jpg" alt="" onclick="openModal();currentSlide(7)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/24.jpg" alt="" onclick="openModal();currentSlide(8)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <!-- <div>
+          body {
+            margin: 0;
+          }
+
+          * {
+            box-sizing: border-box;
+          }
+
+          .row > .column {
+            padding: 0 8px;
+          }
+
+          .row:after {
+            content: '';
+            display: table;
+            clear: both;
+          }
+
+          .column {
+            float: left;
+            width: 25%;
+          }
+
+          /* The Modal (background) */
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+          }
+
+          /* Modal Content */
+          .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 800px;
+            max-height: 600px;
+          }
+
+          /* The Close Button */
+          .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+          }
+
+          .close:hover,
+          .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+          }
+
+          .mySlides {
+            display: none;
+          }
+
+          .cursor {
+            cursor: pointer;
+          }
+
+          /* Next & previous buttons */
+          .prev,
+          .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+          }
+
+          /* Position the "next button" to the right */
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+
+          /* On hover, add a black background color with a little bit see-through */
+          .prev:hover,
+          .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+
+          /* Number text (1/3 etc) */
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
+
+          img {
+            margin-bottom: -4px;
+          }
+
+          .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+          }
+
+          .demo {
+            opacity: 0.6;
+          }
+
+          .active,
+          .demo:hover {
+            opacity: 1;
+          }
+
+          img.hover-shadow {
+            transition: 0.3s;
+          }
+
+          .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+        </style>
+
+        <div class="imageGrid">
+          <div>
+            <img
+              src="img/4.jpg"
+              alt=""
+              onclick="openModal();currentSlide(1)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/6.jpg"
+              alt=""
+              onclick="openModal();currentSlide(2)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/8.jpg"
+              alt=""
+              onclick="openModal();currentSlide(3)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/9.jpg"
+              alt=""
+              onclick="openModal();currentSlide(4)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/13.jpg"
+              alt=""
+              onclick="openModal();currentSlide(5)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/15.jpg"
+              alt=""
+              onclick="openModal();currentSlide(6)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/16.jpg"
+              alt=""
+              onclick="openModal();currentSlide(7)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/24.jpg"
+              alt=""
+              onclick="openModal();currentSlide(8)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <!-- <div>
                   <img src="img/29.jpg" alt="" onclick="openModal();currentSlide(9)" class="pictureGrid myImg hover-shadow cursor" />
                 </div> -->
-                <div>
-                  <img src="img/30.jpg" alt="" onclick="openModal();currentSlide(10)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <!-- <div>
+          <div>
+            <img
+              src="img/30.jpg"
+              alt=""
+              onclick="openModal();currentSlide(10)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <!-- <div>
                   <img src="img/31.jpg" alt="" onclick="openModal();currentSlide(11)" class="pictureGrid myImg hover-shadow cursor" />
                 </div> -->
-                <div>
-                  <img src="img/34.jpg" alt="" onclick="openModal();currentSlide(12)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/35.jpg" alt="" onclick="openModal();currentSlide(13)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/36.jpg" alt="" onclick="openModal();currentSlide(14)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <div>
-                  <img src="img/37.jpg" alt="" onclick="openModal();currentSlide(15)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <!-- <div>
+          <div>
+            <img
+              src="img/34.jpg"
+              alt=""
+              onclick="openModal();currentSlide(12)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/35.jpg"
+              alt=""
+              onclick="openModal();currentSlide(13)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/36.jpg"
+              alt=""
+              onclick="openModal();currentSlide(14)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <div>
+            <img
+              src="img/37.jpg"
+              alt=""
+              onclick="openModal();currentSlide(15)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <!-- <div>
                   <img src="img/38.jpg" alt="" onclick="openModal();currentSlide(16)" class="pictureGrid myImg hover-shadow cursor" />
                 </div> -->
-                <div>
-                  <img src="img/47.jpg" alt="" onclick="openModal();currentSlide(17)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-                <!-- <div>
+          <div>
+            <img
+              src="img/47.jpg"
+              alt=""
+              onclick="openModal();currentSlide(17)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+          <!-- <div>
                   <img src="img/48.jpg" alt="" onclick="openModal();currentSlide(18)" class="pictureGrid myImg hover-shadow cursor" />
                 </div> -->
-                <div>
-                  <img src="img/52.jpg" alt="" onclick="openModal();currentSlide(19)" class="pictureGrid myImg hover-shadow cursor" />
-                </div>
-              </div>
-            
-            <!-- modal window -->
-            <div id="myModal" class="modal">
-              <span class="close cursor" onclick="closeModal()">&times;</span>
-              <div class="modal-content">
-            
-                <div class="mySlides">
-                  <div class="numbertext">1</div>
-                  <img src="img/4.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">2</div>
-                  <img src="img/6.jpg" style="width:100%">
-                </div>
-                
-                <div class="mySlides">
-                  <div class="numbertext">3</div>
-                  <img src="img/8.jpg" style="width:100%">
-                </div>
+          <div>
+            <img
+              src="img/52.jpg"
+              alt=""
+              onclick="openModal();currentSlide(19)"
+              class="pictureGrid myImg hover-shadow cursor"
+            />
+          </div>
+        </div>
 
-                <div class="mySlides">
-                  <div class="numbertext">4</div>
-                  <img src="img/9.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">5</div>
-                  <img src="img/13.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">6</div>
-                  <img src="img/15.jpg" style="width:100%">
-                </div>
-                
-                <div class="mySlides">
-                  <div class="numbertext">7</div>
-                  <img src="img/16.jpg" style="width:100%">
-                </div>
+        <!-- modal window -->
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+            <div class="mySlides">
+              <div class="numbertext">1</div>
+              <img src="img/4.jpg" style="width:100%" />
+            </div>
 
-                <div class="mySlides">
-                  <div class="numbertext">8</div>
-                  <img src="img/24.jpg" style="width:100%">
-                </div>
-            
-                <!-- <div class="mySlides">
+            <div class="mySlides">
+              <div class="numbertext">2</div>
+              <img src="img/6.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">3</div>
+              <img src="img/8.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">4</div>
+              <img src="img/9.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">5</div>
+              <img src="img/13.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">6</div>
+              <img src="img/15.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">7</div>
+              <img src="img/16.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">8</div>
+              <img src="img/24.jpg" style="width:100%" />
+            </div>
+
+            <!-- <div class="mySlides">
                   <div class="numbertext">9 / 4</div>
                   <img src="img/29.jpg" style="width:100%">
                 </div> -->
-            
-                <div class="mySlides">
-                  <div class="numbertext">9</div>
-                  <img src="img/30.jpg" style="width:100%">
-                </div>
-                
-                <!-- <div class="mySlides">
+
+            <div class="mySlides">
+              <div class="numbertext">9</div>
+              <img src="img/30.jpg" style="width:100%" />
+            </div>
+
+            <!-- <div class="mySlides">
                   <div class="numbertext">11 / 4</div>
                   <img src="img/31.jpg" style="width:100%">
                 </div> -->
 
-                <div class="mySlides">
-                  <div class="numbertext">10</div>
-                  <img src="img/34.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">11</div>
-                  <img src="img/35.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">12</div>
-                  <img src="img/36.jpg" style="width:100%">
-                </div>
-                
-                <div class="mySlides">
-                  <div class="numbertext">12</div>
-                  <img src="img/37.jpg" style="width:100%">
-                </div>
+            <div class="mySlides">
+              <div class="numbertext">10</div>
+              <img src="img/34.jpg" style="width:100%" />
+            </div>
 
-                <!-- <div class="mySlides">
+            <div class="mySlides">
+              <div class="numbertext">11</div>
+              <img src="img/35.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">12</div>
+              <img src="img/36.jpg" style="width:100%" />
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">12</div>
+              <img src="img/37.jpg" style="width:100%" />
+            </div>
+
+            <!-- <div class="mySlides">
                   <div class="numbertext">16 / 4</div>
                   <img src="img/38.jpg" style="width:100%">
                 </div> -->
-            
-                <div class="mySlides">
-                  <div class="numbertext">14</div>
-                  <img src="img/47.jpg" style="width:100%">
-                </div>
-            
-                <!-- <div class="mySlides">
+
+            <div class="mySlides">
+              <div class="numbertext">14</div>
+              <img src="img/47.jpg" style="width:100%" />
+            </div>
+
+            <!-- <div class="mySlides">
                   <div class="numbertext">18 / 4</div>
                   <img src="img/48.jpg" style="width:100%">
                 </div> -->
-                
-                <div class="mySlides">
-                  <div class="numbertext">15</div>
-                  <img src="img/52.jpg" style="width:100%">
-                </div>
-                
 
+            <div class="mySlides">
+              <div class="numbertext">15</div>
+              <img src="img/52.jpg" style="width:100%" />
+            </div>
 
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
-                <div class="caption-container">
-                  <p id="caption"></p>
-                </div>
-            
-            
-                <!-- <div class="column">
+            <div class="caption-container"><p id="caption"></p></div>
+
+            <!-- <div class="column">
                   <img class="demo cursor" src="img/4.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
                 </div>
                 <div class="column">
@@ -416,48 +526,66 @@
                 <div class="column">
                   <img class="demo cursor" src="img/52.jpg" style="width:100%" onclick="currentSlide(19)" alt="">
                 </div> -->
-              </div>
-            </div>
-            
-            <script>
-            function openModal() {
-              document.getElementById('myModal').style.display = "block";
-            }
-            
-            function closeModal() {
-              document.getElementById('myModal').style.display = "none";
-            }
-            
-            var slideIndex = 1;
-            showSlides(slideIndex);
-            
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
-            
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
-            
-            function showSlides(n) {
-              var i;
-              var slides = document.getElementsByClassName("mySlides");
-              var dots = document.getElementsByClassName("demo");
-              var captionText = document.getElementById("caption");
-              if (n > slides.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";
-              }
-              for (i = 0; i < dots.length; i++) {
-                  dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";
-              dots[slideIndex-1].className += " active";
-              captionText.innerHTML = dots[slideIndex-1].alt;
-            }
-            </script>
+          </div>
+        </div>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"
+        ></script>
+        <script>
+          function openModal() {
+            document.getElementById('myModal').style.display = 'block'
+          }
 
+          function closeModal() {
+            document.getElementById('myModal').style.display = 'none'
+          }
+
+          var slideIndex = 1
+          showSlides(slideIndex)
+
+          function plusSlides(n) {
+            showSlides((slideIndex += n))
+          }
+
+          function currentSlide(n) {
+            showSlides((slideIndex = n))
+          }
+
+          function showSlides(n) {
+            var i
+            var slides = document.getElementsByClassName('mySlides')
+            var dots = document.getElementsByClassName('demo')
+            var captionText = document.getElementById('caption')
+            if (n > slides.length) {
+              slideIndex = 1
+            }
+            if (n < 1) {
+              slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = 'none'
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(' active', '')
+            }
+            slides[slideIndex - 1].style.display = 'block'
+            dots[slideIndex - 1].className += ' active'
+            captionText.innerHTML = dots[slideIndex - 1].alt
+          }
+        </script>
+      </div>
     </div>
     <footer><div class="footer">© SEAN SYTSMA 2018</div></footer>
   </body>

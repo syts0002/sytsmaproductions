@@ -5,49 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/min/style.css" />
-    <title>Sean Sytsma Photography</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Sean Sytsma Productions</title>
   </head>
 
   <body>
     <header>
       <div class="masthead">
-        <a class="logo" href="index.html">
-          <img src="img/logo.png" alt="branding" />
-        </a>
-        <nav class="nav">
-          <a href="index.html" class="menu-item">home</a>
-          <a href="photoport.html" class="menu-item">portfolio</a>
-          <a href="about.html" class="menu-item">about</a>
-          <a href="contact.html" class="menu-item active">contact</a>
-        </nav>
-        <div class="social">
-          <a
-            href="https://www.instagram.com/sytsma_productions/"
-            target="_blank"
-          >
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a class="navbar-brand logo" href="index.html">
             <img
-              class="socialIcon"
-              src="./assets/instagram.png"
-              alt="instagram"
+              src="img/logo.png"
+              width="auto"
+              height="180px"
+              class="d-inline-block align-top"
+              alt=""
             />
           </a>
-          <a
-            href="https://www.youtube.com/channel/UCD8keeUTNHg2r0LmRVpAZ-g?view_as=subscriber"
-            target="_blank"
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <img class="socialIcon" src="./assets/youtube.png" alt="youtube" />
-          </a>
-        </div>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  PORTFOLIO
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="photoport.html">PHOTO</a>
+                  <a class="dropdown-item" href="video.html">VIDEO</a>
+                </div>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+            <div class="social">
+              <a
+                href="https://www.instagram.com/sytsma_productions/"
+                class="fa fa-instagram"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.youtube.com/channel/UCD8keeUTNHg2r0LmRVpAZ-g?view_as=subscriber"
+                class="fa fa-youtube-play"
+                target="_blank"
+              ></a>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
-
     <!-- main page content -->
-    <div class="content">
-      <h1>email us for a quote.</h1>
+    <div class="photoContainer">
+      <h1 class="heading">CONTACT US</h1>
       <div class="contact">
-        <!--
-          <img src="img/sean.jpg" alt="Sean Sytsma. " class="contactImage">
-        -->
+        <img src="img/sean.jpg" alt="Sean Sytsma. " class="contactImage" />
+
         <div></div>
         <form
           action="https://formspree.io/seansytsma@gmail.com"
@@ -68,7 +108,21 @@
         </form>
       </div>
     </div>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <footer><div class="footer">© SEAN SYTSMA 2018</div></footer>
   </body>
 </html>

@@ -1,14 +1,21 @@
-// normalize css from in class exercise
-@import 'normalize';
-@import 'modal';
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat|Open+Sans|Raleway');
+
+$fontStack: 'Raleway', 'Open Sans', sans-serif;
+$headingFont: 'Lato', 'Open Sans', sans-serif;
 
 // global variables
 $siteColor: #ccc;
 $textColor: rgba(0, 0, 0, 0.78);
 $menuColor: rgba(0, 0, 0, 0.89);
-$fontStack: 'Raleway', 'Open Sans', sans-serif;
-$headingFont: 'Lato', 'Open Sans', sans-serif;
+
+$dropdown-link-color: rgba(0, 0, 0, 0.89);
+$navbar-light-color: $menuColor;
+$font-family-base: $headingFont;
+
+// normalize css from in class exercise
+@import 'normalize';
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'modal';
 
 * {
   box-sizing: border-box;
@@ -16,103 +23,181 @@ $headingFont: 'Lato', 'Open Sans', sans-serif;
 
 html body {
   font-family: $fontStack;
+  nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    @include media-breakpoint-up(md) {
+      font-size: 1.15rem;
+    }
+  }
   h1 {
     font-family: $headingFont;
     letter-spacing: 0.6px;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
   h2 {
     font-family: $headingFont;
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 }
 
 .masthead {
-  display: flex;
+  // display: flex;
+  // justify-content: space-evenly;
   background-image: url(../../img/header-01.png);
-  background-position: left;
-  background-repeat: no-repeat;
+
+  // background-position: left;
   background-size: cover;
-  height: 200px;
+  background-repeat: no-repeat;
+  // background-size: auto 200px;
+  // min-height: 200px;
+
+  .navbar {
+    padding-right: 50px;
+    @media screen and (min-width: 1000px) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-right: 140px;
+    }
+  }
+  .social {
+    .fa {
+      padding: 5px;
+      font-size: 1.25rem;
+      text-align: center;
+      text-decoration: none;
+      color: $menuColor;
+    }
+    .fa:hover {
+      opacity: 0.7;
+    }
+  }
 
   .nav {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+    // display: flex;
+    // flex-grow: 1;
+    // justify-content: space-between;
+    // align-items: center;
+    // height: 100%;
+
     // mobile view
-    @media screen and (max-width: 680px) {
-      // nav bar is folded into a column
-      flex-direction: column;
-      padding-top: 30px;
-      padding-bottom: 10px;
-    }
-    // desktop view
-    @media screen and (min-width: 680px) {
-      // nav bar unfolds into a row
-      padding-top: 125px;
-      flex-direction: row;
-      justify-content: center;
-    }
+    // @media screen and (max-width: 680px) {
+    //   // nav bar is folded into a column
+    //   flex-direction: column;
+    //   padding-top: 30px;
+    //   padding-bottom: 10px;
+    // }
+    // // desktop view
+    // @media screen and (min-width: 680px) {
+    //   // nav bar unfolds into a row
+    //   padding-top: 125px;
+    //   flex-direction: row;
+    //   justify-content: center;
+    // }
 
-    a.menu-item {
-      flex-grow: 1;
-      letter-spacing: 0.8px;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: $headingFont;
-      font-size: 1.25rem;
-      color: $menuColor;
-      text-decoration: none;
+    // a.menu-item,
+    // .dropdown .dropbtn {
+    //   flex-grow: 1;
+    //   letter-spacing: 0.8px;
+    //   text-align: center;
+    //   text-transform: uppercase;
+    //   font-family: $headingFont;
+    //   font-size: 1.25rem;
+    //   color: $menuColor;
+    //   text-decoration: none;
+    //   border: none;
+    //   outline: none;
+    //   background-color: inherit;
+    //   cursor: pointer;
 
-      &.active {
-        text-decoration: underline;
-        text-decoration-color: #9c1c1f;
-      }
+    //   &.active {
+    //     text-decoration: underline;
+    //     text-decoration-color: #9c1c1f;
+    //   }
+    // }
+
+    // .dropdown {
+    //   float: left;
+    //   overflow: hidden;
+    // }
+
+    // .navbar a:hover,
+    // .dropdown:hover .dropbtn,
+    // .dropbtn:focus {
+    //   background-color: none;
+    // }
+
+    // .dropdown-content {
+    //   display: none;
+    //   position: absolute;
+    //   background-color: #f9f9f9;
+    //   min-width: 160px;
+    //   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    //   z-index: 1;
+    // }
+
+    // .dropdown-content a {
+    //   float: none;
+    //   color: $menuColor;
+    //   font-family: $headingFont;
+    //   font-size: 1rem;
+    //   padding: 12px 16px;
+    //   text-decoration: none;
+    //   display: block;
+    //   text-align: center;
+    // }
+
+    // .dropdown-content a:hover {
+    //   background-color: #ddd;
+    // }
+
+    .show {
+      display: block;
     }
   }
 
-  .logo {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    height: 100%;
+  // .logo {
+  //   display: flex;
+  //   // flex-grow: 1;
+  //   // align-items: center;
+  //   height: 100%;
 
-    img {
-      height: calc(100% - 3.5rem);
-      width: auto;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
+  //   img {
+  //     height: calc(100% - 3.5rem);
+  //     width: auto;
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //   }
+  // }
 
-  .social {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 103px;
-    padding-bottom: 10px;
-    @media screen and (min-width: 640px) {
-      flex-direction: row;
-      justify-content: center;
-      padding-top: 140px;
-    }
-    .socialIcon {
-      height: 1.1rem;
-      width: auto;
-      margin-left: auto;
-      margin-right: auto;
+  // .social {
+  //   display: flex;
+  //   flex-grow: 1;
+  //   justify-content: space-evenly;
+  //   align-items: center;
+  //   flex-direction: column;
+  //   padding-top: 103px;
+  //   padding-bottom: 10px;
+  //   @media screen and (min-width: 640px) {
+  //     flex-direction: row;
+  //     justify-content: center;
+  //     padding-top: 140px;
+  //   }
+  //   .socialIcon {
+  //     height: 1.1rem;
+  //     width: auto;
+  //     margin-left: auto;
+  //     margin-right: auto;
 
-      @media screen and (min-width: 400px) {
-        padding-left: 12px;
-        padding-right: 12px;
-      }
-    }
-  }
+  //     @media screen and (min-width: 400px) {
+  //       padding-left: 12px;
+  //       padding-right: 12px;
+  //     }
+  //   }
+  // }
 }
 
 footer {
@@ -135,24 +220,48 @@ footer {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 240px);
+  width: 100%;
 }
 
 // index.html
 .imageContainer {
-  max-width: 600px;
+  max-width: 850px;
+  margin: 10px auto 150px auto;
 
-  .heading {
-    margin-left: 20px;
-  }
-
-  .landingImage {
-    display: block;
-    max-width: 100%;
-    margin: 20px 0 20px 0;
-  }
+  // .landingImage {
+  //   display: block;
+  //   max-width: 100%;
+  //   margin: 20px 0 20px 0;
+  // }
 }
 
+.video-container {
+  position: relative;
+  padding: 0 0 56.25% 0;
+  margin-top: 100px;
+}
+
+.video-container:first-child,
+.video-container:nth-child(2) {
+  margin-top: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.heading {
+  padding: 20px;
+}
 // portfolio.html
+
+.photoContainer {
+  max-width: 850px;
+  margin: 10px auto 0 auto;
+}
 
 .imageGrid {
   max-width: 1000px;
@@ -218,6 +327,8 @@ footer {
 
 .contactImage {
   margin-right: 20px;
+  height: 200px;
+  width: auto;
 
   @media screen and (max-width: 600px) {
     display: none;
@@ -250,3 +361,20 @@ footer {
     background-color: darken(desaturate($siteColor, 35%), 20%);
   }
 }
+
+// dropdown
+
+// .navbar {
+//   overflow: hidden;
+//   background-color: #333;
+//   font-family: Arial, Helvetica, sans-serif;
+// }
+
+// .navbar a {
+//   float: left;
+//   font-size: 16px;
+//   color: white;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
+// }
